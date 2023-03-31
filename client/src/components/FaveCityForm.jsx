@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 
-const MyForm = ({ onSaveCity, editingCity, onUpdateCity }) => {
+const FaveCityForm = ({ onSaveCity, editingCity, onUpdateCity }) => {
 	// This is the original State with not initial city
 	const [city, setCity] = useState(
 		// editingCity || {
@@ -124,4 +124,4 @@ const MyForm = ({ onSaveCity, editingCity, onUpdateCity }) => {
 	);
 };
 
-export default MyForm;
+export default FaveCityForm;

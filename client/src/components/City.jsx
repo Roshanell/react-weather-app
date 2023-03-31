@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import * as ioicons from "react-icons/io5";
 
-const Student = ({ city, toUpdate, toDelete }) => {
+const City = ({ city, toUpdate, toDelete }) => {
 	const onUpdate = (toUpdateCity) => {
 		toUpdate(toUpdateCity);
 	};
@@ -43,4 +43,4 @@ const Student = ({ city, toUpdate, toDelete }) => {
 	);
 };
 
-export default Student;
+export default City;
