@@ -57,7 +57,7 @@ const ListStudents = () => {
 	return (
 		<div className="mybody">
 			<div className="list-cities">
-				<h2>Techtonica Participants </h2>
+				<h2>Your Favorite Cities </h2>
 				<ul>
 					{cities.map((city) => {
 						return (
