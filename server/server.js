@@ -8,6 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
+const apiKey = process.env.API_KEY;
 
 // creates an endpoint for the route "/""
 app.get("/", (req, res) => {
@@ -22,6 +23,31 @@ app.get("/api/cities", async (req, res) => {
 	} catch (e) {
 		return res.status(400).json({ e });
 	}
+});
+
+app.get("/api/cityWeather/", (req, res) => {
+	// const test = req.query;
+	// console.log(test);
+	const city = req.query.cityname;
+	//console.log(city);
+	console.log(apiKey);
+	const params = new URLSearchParams({
+		q: city,
+		appid: apiKey,
+		units: "Metric",
+	});
+	const url = `https://api.openweathermap.org/data/2.5/weather?${params}`;
+	//const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+	console.log(url);
+	fetch(url)
+		.then((res) => res.json())
+		.then((data) => {
+			//console.log(data);
+			res.send({ data });
+		})
+		.catch((err) => {
+			console.log(err);
+		});
 });
 
 // create the POST request
