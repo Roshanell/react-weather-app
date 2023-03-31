@@ -34,7 +34,7 @@ app.post("/api/cities", async (req, res) => {
 		};
 		console.log([newCity.cityname, newCity.state, newCity.iscurrentfavorite]);
 		const result = await db.query(
-			"INSERT INTO locations(cityname, state, is_current_favorite) VALUES($1, $2, $3) RETURNING *",
+			"INSERT INTO locations(cityname, state, iscurrentfavorite) VALUES($1, $2, $3) RETURNING *",
 			[newCity.cityname, newCity.state, newCity.iscurrentfavorite]
 		);
 		console.log(result.rows[0]);

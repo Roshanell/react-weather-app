@@ -5,17 +5,17 @@ const MyForm = ({ onSaveCity, editingCity, onUpdateCity }) => {
 	// This is the original State with not initial city
 	const [city, setCity] = useState(
 		// editingCity || {
-            {
-			cityMName: "",
+		{
+			cityname: "",
 			state: "",
 			iscurrentfavorite: false,
 		}
 	);
 
 	//create functions that handle the event of the user typing into the form
-	const handleCityNameChange = (event) => {
-		const cityName = event.target.value;
-		setCity((city) => ({ ...city, cityName }));
+	const handlecitynameChange = (event) => {
+		const cityname = event.target.value;
+		setCity((city) => ({ ...city, cityname }));
 	};
 
 	const handleStateNameChange = (event) => {
@@ -30,7 +30,7 @@ const MyForm = ({ onSaveCity, editingCity, onUpdateCity }) => {
 	};
 
 	const clearForm = () => {
-		setCity({ cityName: "", state: "", iscurrentfavorite: false });
+		setCity({ cityname: "", state: "", iscurrentfavorite: false });
 	};
 
 	//A function to handle the post request
@@ -44,7 +44,7 @@ const MyForm = ({ onSaveCity, editingCity, onUpdateCity }) => {
 				return response.json();
 			})
 			.then((data) => {
-				//console.log("From the post ", data);
+				console.log("From the post ", data);
 				//I'm sending data to the List of cities (the parent) for updating the list
 				onSaveCity(data);
 				//this line just for cleaning the form
@@ -88,8 +88,8 @@ const MyForm = ({ onSaveCity, editingCity, onUpdateCity }) => {
 					id="add-city-name"
 					placeholder="City Name"
 					required
-					value={city.cityName}
-					onChange={handleCityNameChange}
+					value={city.cityname}
+					onChange={handlecitynameChange}
 				/>
 			</Form.Group>
 			<Form.Group>
