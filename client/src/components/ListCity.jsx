@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as ioicons from "react-icons/io5";
-import MyForm from "./FaveCityForm";
-import Student from "./City";
 import City from "./City";
+import FaveCityForm from "./FaveCityForm";
 
 const ListCity = () => {
 	// this is my original state with an array of students
@@ -19,6 +18,8 @@ const ListCity = () => {
 				setCities(cities);
 			});
 	};
+
+	
 
 	useEffect(() => {
 		loadCities();
@@ -70,7 +71,7 @@ const ListCity = () => {
 					})}
 				</ul>
 			</div>
-			<MyForm
+			<FaveCityForm
 				key={editingCity ? editingCity.id : null}
 				onSaveCity={onSaveCity}
 				editingCity={editingCity}
