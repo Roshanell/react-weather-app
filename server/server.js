@@ -46,7 +46,7 @@ app.post("/api/cities", async (req, res) => {
 });
 
 //delete request for cities
-app.delete("/api/city/:cityId", async (req, res) => {
+app.delete("/api/cities/:cityId", async (req, res) => {
 	try {
 		const cityId = req.params.cityId;
 		await db.query("DELETE FROM locations WHERE id=$1", [cityId]);
