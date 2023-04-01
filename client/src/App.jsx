@@ -31,7 +31,9 @@ function App() {
 	return (
 		<div className="App">
 			<MyNavBar />
+
 			<WeatherForm city={city} handleSubmit={handleSubmit} />
+
 			{!city ? null : <WeatherCard data={result} />}
 			<ListCity />
 		</div>

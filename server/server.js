@@ -34,9 +34,10 @@ app.get("/api/cityWeather/", (req, res) => {
 	const params = new URLSearchParams({
 		q: city,
 		appid: apiKey,
-		units: "Metric",
+		units: "Imperial",
 	});
 	const url = `https://api.openweathermap.org/data/2.5/weather?${params}`;
+
 	//const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 	console.log(url);
 	fetch(url)

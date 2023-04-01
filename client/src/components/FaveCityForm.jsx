@@ -108,7 +108,7 @@ const FaveCityForm = ({ onSaveCity, editingCity, onUpdateCity }) => {
 				id={`isCurrent`}
 				checked={city.iscurrentfavorite}
 				onChange={handleCheckChange}
-				label={`Are they in the current program?`}
+				label={`Is it a favorite city?`}
 			/>
 			<Form.Group>
 				<Button type="submit" variant="outline-success">
